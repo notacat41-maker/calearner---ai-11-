@@ -34,13 +34,8 @@ export default defineConfig(({ mode }) => {
         }
       })
     ],
-    build: {
-      rollupOptions: {
-        // Externalize dependencies that are provided by the environment importmap
-        // to prevent "Duplicate React" errors and reduce bundle size.
-        external: ['react', 'react-dom', '@google/genai', 'lucide-react', 'recharts']
-      }
-    },
+    // Removed build.rollupOptions.external to ensure all libraries (React, Recharts, etc.) 
+    // are bundled into the app for production deployment on Vercel.
     define: {
       'process.env.API_KEY': JSON.stringify(env.VITE_API_KEY || env.API_KEY)
     }
