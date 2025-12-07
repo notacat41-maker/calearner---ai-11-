@@ -10,7 +10,7 @@ import PremiumModal from './components/PremiumModal';
 import { AuthModal } from './components/AuthModal';
 import { generateLesson } from './services/geminiService';
 import { login, logout, getStorageKey } from './services/authService';
-import { purchaseProduct } from './services/storeService'; // Import Store Service
+import { purchaseProduct } from './services/storeService';
 import { 
   UserSettings, 
   DailyLesson, 
