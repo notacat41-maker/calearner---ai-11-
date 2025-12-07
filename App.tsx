@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import confetti from 'canvas-confetti';
 import { Onboarding } from './components/Onboarding';
 import { CalendarView } from './components/CalendarView';
 import { StatsChart } from './components/StatsChart';
@@ -144,14 +143,6 @@ const App: React.FC = () => {
       const loggedInUser = await login(email);
       setUser(loggedInUser);
       setShowAuthModal(false);
-      
-      // The useEffect will trigger data reload
-      confetti({
-          particleCount: 100,
-          spread: 70,
-          origin: { y: 0.8 },
-          colors: ['#3b82f6', '#8b5cf6']
-      });
   };
 
   const handleLogout = async () => {
@@ -301,13 +292,6 @@ const App: React.FC = () => {
   const handleCompleteLesson = () => {
     if (!todayLesson || todayLesson.completed) return;
 
-    confetti({
-      particleCount: 150,
-      spread: 70,
-      origin: { y: 0.7 },
-      colors: ['#3b82f6', '#10b981', '#f59e0b']
-    });
-    
     playSuccessSound();
 
     const dateStr = getTodayString();
@@ -385,7 +369,6 @@ const App: React.FC = () => {
                 premiumType: type
             }));
             setShowPremiumModal(false);
-            confetti({ particleCount: 200, spread: 100, origin: { y: 0.6 } });
           }
       } catch (error) {
           console.error("Purchase failed", error);
@@ -411,7 +394,6 @@ const App: React.FC = () => {
             setShowPremiumModal(false);
             const topic = isCustom ? premiumTargetCustomTopic : undefined;
             handleTrackSwitchAttempt(track, topic);
-            confetti({ particleCount: 100, spread: 80, origin: { y: 0.6 } });
           }
       } catch (error) {
           console.error("Purchase failed", error);
