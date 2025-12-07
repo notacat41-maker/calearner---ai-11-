@@ -1,16 +1,16 @@
 import React, { useState, useEffect } from 'react';
-import { Onboarding } from './components/Onboarding.tsx';
-import { CalendarView } from './components/CalendarView.tsx';
-import { StatsChart } from './components/StatsChart.tsx';
-import { SettingsModal } from './components/SettingsModal.tsx';
-import { ArchiveView } from './components/ArchiveView.tsx';
-import { LessonCard } from './components/LessonCard.tsx';
-import { AdInterstitial } from './components/AdInterstitial.tsx';
-import PremiumModal from './components/PremiumModal.tsx';
-import { AuthModal } from './components/AuthModal.tsx';
-import { generateLesson } from './services/geminiService.ts';
-import { login, logout, getStorageKey } from './services/authService.ts';
-import { purchaseProduct } from './services/storeService.ts';
+import { Onboarding } from './components/Onboarding';
+import { CalendarView } from './components/CalendarView';
+import { StatsChart } from './components/StatsChart';
+import { SettingsModal } from './components/SettingsModal';
+import { ArchiveView } from './components/ArchiveView';
+import { LessonCard } from './components/LessonCard';
+import { AdInterstitial } from './components/AdInterstitial';
+import PremiumModal from './components/PremiumModal';
+import { AuthModal } from './components/AuthModal';
+import { generateLesson } from './services/geminiService';
+import { login, logout, getStorageKey } from './services/authService';
+import { purchaseProduct } from './services/storeService';
 import { 
   UserSettings, 
   DailyLesson, 
@@ -20,15 +20,15 @@ import {
   SubscriptionState,
   User,
   SKU
-} from './types.ts';
+} from './types';
 import { 
   SunIcon, 
   MoonIcon, 
   FireIcon, 
-  SettingsIcon,
-  BookOpenIcon,
-  CrownIcon
-} from './components/Icons.tsx';
+  SettingsIcon, 
+  BookOpenIcon, 
+  CrownIcon 
+} from './components/Icons';
 
 // Helper to get today's date string YYYY-MM-DD local time
 const getTodayString = () => {
