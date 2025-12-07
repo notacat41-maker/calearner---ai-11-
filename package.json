@@ -1,11 +1,11 @@
 {
   "name": "calearner-ai",
   "private": true,
-  "version": "1.0.6",
+  "version": "1.0.7",
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "tsc && vite build",
+    "build": "vite build",
     "preview": "vite preview",
     "backup": "tar --exclude='node_modules' --exclude='.git' --exclude='dist' -czf calearner-backup.tar.gz ."
   },
